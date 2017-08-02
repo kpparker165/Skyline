@@ -80,6 +80,10 @@ STATICFILES_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     os.path.join(os.path.dirname(__file__), 'static'),
+    os.path.join(os.path.dirname(__file__), 'static/images/100_yard'),
+    os.path.join(os.path.dirname(__file__), 'static/images/200_300_yard'),
+    os.path.join(os.path.dirname(__file__), 'static/images/pistol'),
+    os.path.join(os.path.dirname(__file__), 'static/images/trap_skeet'),
 )
 
 # List of finder classes that know how to find static files in

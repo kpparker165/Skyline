@@ -39,7 +39,7 @@ urlpatterns = patterns('',
     url(r'^polls/(?P<poll_id>\d+)/vote/$', 'polls.views.vote'),
     url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^login$', auth_views.login, name='login'),
+    # url(r'^login$', auth_views.login, name='login'),
     # url(r'^login/$', 'django.contrib.auth.views.login'),
     # url(r'^logout/$', 'django.contrib.auth.views.logout'),
 )

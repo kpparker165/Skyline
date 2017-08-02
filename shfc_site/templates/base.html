@@ -1,4 +1,4 @@
-{% load url from future %}
+
 <html>
   <head>
     <!-- THIS IS WHERE ALL THE SCRIPTS WILL BE HELD" -->
@@ -59,12 +59,6 @@
               <a href="/range/" class="btn btn-link" role="button">Range</a>
             </li>
           {% endblock %}
-          {{ user }}
-            {% if user.is_anonymous %}
-              <a href="{% url 'django.contrib.auth.views.login' %}">login</a>
-            {% else %}
-              <a href="{% url 'django.contrib.auth.views.login' %}">logout</a>
-          {% endif %}
         </ul>
 
           <!-- Large button group -->

@@ -27,12 +27,15 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r"^$", "home.views.index"),
-    url(r"^archery/", 'archery.views.index'),
-    url(r"^boats/$", 'boats.views.index'),
+    url(r"^fishing/home/$", 'boats.views.home_index'),
+    url(r"^fishing/boats/$", 'boats.views.index'),
     url(r"^boats/data/$", 'boats.views.schedule'),
     url(r"^membership/$", 'membership.views.index'),
 
-    url(r"^range/$", 'range.views.index'),
+    url(r"^hunting/home/$", 'range.views.home_index'),
+    url(r"^hunting/archery/", 'archery.views.index'),
+    url(r"^hunting/range/$", 'range.views.index'),
+
     url(r'^polls/$', 'polls.views.index'),
     url(r'^polls/(?P<poll_id>\d+)/$', 'polls.views.detail'),
     url(r'^polls/(?P<poll_id>\d+)/results/$', 'polls.views.results'),
@@ -40,6 +43,6 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
     # url(r'^login$', auth_views.login, name='login'),
-    # url(r'^login/$', 'django.contrib.auth.views.login'),
-    # url(r'^logout/$', 'django.contrib.auth.views.logout'),
+    url(r'^login/$', 'django.contrib.auth.views.login'),
+    url(r'^logout/$', 'django.contrib.auth.views.logout'),
 )

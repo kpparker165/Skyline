@@ -7,20 +7,44 @@
 </li>
 {% endblock %}
 
-{% block nav-range %}
-<li role="presentation" class="active">
-  <a href="/range/" class="btn btn-link" role="button">Range</a>
-</li>
-{% endblock %}
-
 
 {% block content %}
 <div class="col-sm-12">
+
   <dir class="row">
-    <h3>200 Yard</h3>
+    <div class="col-sm-12 text-center">
+      <h3>Shooting Ranges</h3>
+    </div>
+  </dir>
+
+  <dir class="row">
+    <div class="col-sm-6">
+      <div class="col-sm-12 text-center">
+        <h3>About</h3> 
+      </div>
+      <p>
+        {{ page_content.range_about }}
+      </p>
+    </div>
+    <div class="col-sm-6">
+      <div class="col-sm-12 text-center">
+        <h3>Range Rules</h3> 
+      </div>
+      <p>
+        <li>Rule</li>
+        <li>Rule</li>
+        <li>Rule</li>
+      </p>
+    </div>
+  </dir>
+
+  <dir class="row">
+    <div class="col-sm-12 text-center">
+      <h3>200 Yard</h3>
+    </div>
 	  <div class="col-sm-7">
         <p>	
-		  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur purus metus, malesuada non nulla nec, luctus rutrum tortor. Proin pharetra venenatis sem, nec placerat neque dignissim eu. Proin viverra in arcu vitae tempus. Vestibulum laoreet, magna in aliquet interdum, tortor justo cursus justo, vel scelerisque nunc nunc vel neque. Morbi suscipit nunc vel commodo pretium. Ut faucibus at metus nec condimentum. Nullam in nibh justo. Sed ut posuere turpis, vel molestie est. Donec eu accumsan mi.
+		      {{ page_content.range_200_300_yard }}
         </p>
 	  </div>
 	  <div id="200Carousel" class="col-sm-5 carousel slide" data-ride="200carousel">
@@ -53,7 +77,9 @@
   </dir>
 
   <dir class="row">
-    <h3>100 Yard</h3>
+    <div class="col-sm-12 text-center">
+      <h3>100 Yard</h3>
+    </div>
     <div id="100Carousel" class="col-sm-5 carousel slide" data-ride="100carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -86,18 +112,19 @@
   </a>
 </div>
     <div class="col-sm-7">
-        <p>	
-
-          Nullam commodo sed ex eu fringilla. Nam lacinia aliquam rhoncus. Cras sodales, enim sed iaculis volutpat, eros quam laoreet ante, vitae efficitur arcu dolor at nisl. Integer a blandit mi. Maecenas magna sapien, pharetra vitae lorem non, sollicitudin tristique dui. Quisque vehicula metus at purus auctor, vitae egestas tellus vehicula. Nulla sed viverra ligula, eget eleifend tellus. Suspendisse vestibulum porttitor leo sit amet mollis. Ut tempus elit sit amet ante dapibus efficitur. Sed ac sem lobortis, finibus arcu quis, laoreet tellus. Nulla at fermentum dolor. Integer id pretium nunc, sit amet tempor sem. Fusce gravida felis urna, nec viverra leo pharetra quis. Integer vitae nibh at lacus vestibulum aliquam ac ac quam. Cras mattis at leo sed commodo. Duis pharetra dignissim purus, sit amet tincidunt neque elementum vel.
+        <p>
+          {{ page_content.range_100_yard }}
         </p>
     </div>
   </dir>
 
   <dir class="row">
-	  <h3>Pistol House</h3>
+	  <div class="col-sm-12 text-center">
+      <h3>Pistol</h3>
+    </div>
 	  <div class="col-sm-7">
         <p>	
-		  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur purus metus, malesuada non nulla nec, luctus rutrum tortor. Proin pharetra venenatis sem, nec placerat neque dignissim eu. Proin viverra in arcu vitae tempus. Vestibulum laoreet, magna in aliquet interdum, tortor justo cursus justo, vel scelerisque nunc nunc vel neque. Morbi suscipit nunc vel commodo pretium. Ut faucibus at metus nec condimentum. Nullam in nibh justo. Sed ut posuere turpis, vel molestie est. Donec eu accumsan mi.
+          {{ page_content.range_pistol }}
         </p>
 	  </div>
 	  <div id="pistolCarousel" class="col-sm-5 carousel slide" data-ride="pistolcarousel">
@@ -140,7 +167,9 @@
 </div>
 
   <dir class="row">
-    <h3>Trap and Skeet</h3>
+    <div class="col-sm-12 text-center">
+      <h3>Trap and Skeet</h3>
+    </div>
         <div id="trapSkeetCarousel" class="col-sm-5 carousel slide" data-ride="trapSkeetcarousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -174,8 +203,7 @@
 </div>
     <div class="col-sm-7">
         <p>	
-
-          Nullam commodo sed ex eu fringilla. Nam lacinia aliquam rhoncus. Cras sodales, enim sed iaculis volutpat, eros quam laoreet ante, vitae efficitur arcu dolor at nisl. Integer a blandit mi. Maecenas magna sapien, pharetra vitae lorem non, sollicitudin tristique dui. Quisque vehicula metus at purus auctor, vitae egestas tellus vehicula. Nulla sed viverra ligula, eget eleifend tellus. Suspendisse vestibulum porttitor leo sit amet mollis. Ut tempus elit sit amet ante dapibus efficitur. Sed ac sem lobortis, finibus arcu quis, laoreet tellus. Nulla at fermentum dolor. Integer id pretium nunc, sit amet tempor sem. Fusce gravida felis urna, nec viverra leo pharetra quis. Integer vitae nibh at lacus vestibulum aliquam ac ac quam. Cras mattis at leo sed commodo. Duis pharetra dignissim purus, sit amet tincidunt neque elementum vel.
+          {{ page_content.range_trap_skeet}}     
         </p>
     </div>
   </dir>

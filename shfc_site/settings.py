@@ -138,6 +138,8 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     # Poll App
     'polls',
+    'home',
+    'range',
     'events',
     'boats',
 )

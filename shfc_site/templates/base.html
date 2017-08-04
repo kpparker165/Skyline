@@ -1,119 +1,142 @@
 
 <html>
-  <head>
-    <!-- THIS IS WHERE ALL THE SCRIPTS WILL BE HELD" -->
-    <link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/css/bootstrap-theme-flatly.min.css">
-    <link rel="stylesheet" href="{{ STATIC_URL }}custom/site.css">
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
-    <!-- Latest compiled JavaScript -->
-    <script src="{{ STATIC_URL}}/bootstrap/js/bootstrap.min.js"></script>
+<head>
+  <!-- THIS IS WHERE ALL THE SCRIPTS WILL BE HELD" -->
+  <link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/css/bootstrap-theme-flatly.min.css">
+  <link rel="stylesheet" href="{{ STATIC_URL }}custom/site.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <link href='{{ STATIC_URL}}fullcalendar-3.4.0/fullcalendar.min.css' rel='stylesheet'/>
-    <link href='{{ STATIC_URL}}fullcalendar-3.4.0/fullcalendar.print.min.css' rel='stylesheet' media='print' />
-    <script src='{{ STATIC_URL}}fullcalendar-3.4.0/lib/moment.min.js'></script>
-    <script src='{{ STATIC_URL}}fullcalendar-3.4.0/lib/jquery.min.js'></script>
-    <script src='{{ STATIC_URL}}fullcalendar-3.4.0/fullcalendar.min.js'></script>
-    <script src='{{ STATIC_URL}}custom/calendar.js'></script>
-    
-    {% block head %}
- 
-    
-    {% endblock %}
+  <!-- Latest compiled JavaScript -->
+  <script src="{{ STATIC_URL}}/bootstrap/js/bootstrap.min.js"></script>
+
+  <link href='{{ STATIC_URL}}fullcalendar-3.4.0/fullcalendar.min.css' rel='stylesheet'/>
+  <link href='{{ STATIC_URL}}fullcalendar-3.4.0/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+  <script src='{{ STATIC_URL}}fullcalendar-3.4.0/lib/moment.min.js'></script>
+  <script src='{{ STATIC_URL}}fullcalendar-3.4.0/lib/jquery.min.js'></script>
+  <script src='{{ STATIC_URL}}fullcalendar-3.4.0/fullcalendar.min.js'></script>
+  <script src='{{ STATIC_URL}}custom/calendar.js'></script>
+
+  {% block head %}
 
 
-    
-  </head>
-  <body>
+  {% endblock %}
+
+
+
+</head>
+<body>
   <div class="col-sm-12 text-center" id="navbar">
-        {% block nav %}
-        <ul class="nav nav-tabs">
-          {% block nav-home %}
-            <li role="presentation" class="active">
-              <a href="/" class="btn btn-link" role="button">Home</a>
-            </li>
-          {% endblock %}
+    {% block nav %}
+    <ul class="nav nav-tabs">
+      {% block nav-home %}
+      <li role="presentation" class="active">
+        <a href="/" class="btn btn-link" role="button">Home</a>
+      </li>
+      {% endblock %}
 
-          {% block nav-archery %}
-            <li role="presentation">
-              <a href="/archery/" class="btn btn-link" role="button">Archery</a>
-            </li>
-          {% endblock %}
-
-          {% block nav-boats %}
-            <li role="presentation">
-              <a href="/boats/" class="btn btn-link" role="button">Marine</a>
-            </li>
-          {% endblock %}
-          
-          {% block nav-membership %}
-            <li role="presentation">
-              <a href="/membership/" class="btn btn-link" role="button">Membership</a>
-            </li>
-          {% endblock %}
-
-          {% block nav-range %}
-            <li role="presentation">
-              <a href="/range/" class="btn btn-link" role="button">Range</a>
-            </li>
-          {% endblock %}
+      {% block nav-range %}
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hunting <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/hunting/home/">Hunting Home</a></li>
+          <li><a href="/hunting/range/">Shooting Range</a></li>
+          <li><a href="/hunting/archery/">Archery Range</a></li>
+          <li><a href="#">Awards</a></li>
         </ul>
+      </li>
+      {% endblock %}
 
-          <!-- Large button group -->
+      {% block nav-boats %}
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Fishing <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/fishing/home/">Fishing Home</a></li>
+          <li><a href="/fishing/boats/">Boats</a></li>
+        </ul>
+      </li>
+      {% endblock %}
 
-        {% endblock %}
+      {% block nav-membership %}
+      <li role="presentation">
+        <a href="/membership/" class="btn btn-link" role="button">Membership</a>
+      </li>
+      {% endblock %}
+
+      {% block nav-login %}
+
+      <li role="presentation" class="pull-right">
+        {% if user.is_anonymous %}
+        <a href="{% url django.contrib.auth.views.login %}">login</a>
+        {% else %}
+        <a href="{% url django.contrib.auth.views.logout %}">logout</a>
+        {% endif %}
+      </li>
+
+      <li role="presentation" class="pull-right">
+        <strong>
+          <a class="disabled"> {{ user }}</a> 
+        </strong>
+      </li>
+      {% endblock %}
+      
+      {% endblock %}
+
+    </ul>
+
+    <!-- Large button group -->
+
+  </div>
+
+  <dir class="container-fluid" id="main_container">
+
+    <div class="col-sm-8">
+
+      {% block content %}
+      This temp data for the content block.
+      {% endblock %}
+
+    </div>
+    <div class="col-sm-4" id="alert_feed">
+      <div class="col-sm-12 text-center" >
+        ALERTS AND EVENTS
       </div>
 
-      <dir class="container-fluid" id="main_container">
-        
-        <div class="col-sm-8">
-          
-        {% block content %}
-          This temp data for the content block.
-        {% endblock %}
+      <div class="col-sm-12 pre-scrollable">
+        {% block side-menu %}
+        {% if latest_event_list %}
+        {% for event in latest_event_list %}
+        <div class="col-sm-12 bg-{{event.event_type}}" style="border-radius: 25px;">
 
-        </div>
-        <div class="col-sm-4" id="alert_feed">
-          <div class="col-sm-12 text-center" >
-            ALERTS AND EVENTS
-          </div>
-            
-          <div class="col-sm-12 pre-scrollable">
-          {% block side-menu %}
-            {% if latest_event_list %}
-              {% for event in latest_event_list %}
-                <div class="col-sm-12 bg-{{event.event_type}}" style="border-radius: 25px;">
-                  
-                  <div class="text-center">
-                    <strong>
-                      {{ event.event_creation_date }}
-                    </strong>
-                    <br>
-                    {{ event.event_name }}
-                    <hr>
-                    {{ event.event_desc }}
-                    {% if event.event_type == "success" %}
-                      <br>
-                      <i>{{event.event_start_date}} - {{event.event_end_date}}</i>
-                    {% endif %}
-                  </div>
-                  <hr>
-                </div>
-
-              {% endfor %}
-      
-
-            {% else %}
-              <p>No polls are available.</p>
+          <div class="text-center">
+            <strong>
+              {{ event.event_creation_date }}
+            </strong>
+            <br>
+            {{ event.event_name }}
+            <hr>
+            {{ event.event_desc }}
+            {% if event.event_type == "success" %}
+            <br>
+            <i>{{event.event_start_date}} - {{event.event_end_date}}</i>
             {% endif %}
-  
-            </div>
-          {% endblock %}
-
+          </div>
+          <hr>
         </div>
-      </dir>
-  </body>
+
+        {% endfor %}
+
+
+        {% else %}
+        <p>No polls are available.</p>
+        {% endif %}
+
+      </div>
+      {% endblock %}
+
+    </div>
+  </dir>
+</body>
 </html>
 

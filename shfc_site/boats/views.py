@@ -15,6 +15,14 @@ def index(request):
   })
   return render(request, 'boats/index.html', c)
 
+def home_index(request):
+  latest_event_list = Event.objects.all().order_by('-event_creation_date')[:10]
+  c = Context({
+  'latest_event_list': latest_event_list,
+  })
+  return render(request, 'boats/fishing_home.html',c)
+
+
 # def index(request):
 #     return render(request, "boats/index.html")
 def schedule(request):

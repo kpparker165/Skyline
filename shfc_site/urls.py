@@ -32,9 +32,11 @@ urlpatterns = patterns('',
     url(r"^boats/data/$", 'boats.views.schedule'),
     url(r"^membership/$", 'membership.views.index'),
 
-    url(r"^hunting/home/$", 'range.views.home_index'),
-    url(r"^hunting/archery/", 'archery.views.index'),
-    url(r"^hunting/range/$", 'range.views.index'),
+    url(r"^ranges/home/$", 'range.views.home_index'),
+    url(r"^ranges/archery/", 'archery.views.index'),
+    url(r"^ranges/range/$", 'range.views.index'),
+    url(r"^ranges/home/rso/calender/data/$", 'range.views.rso_calendar_data'),
+
 
     url(r'^polls/$', 'polls.views.index'),
     url(r'^polls/(?P<poll_id>\d+)/$', 'polls.views.detail'),

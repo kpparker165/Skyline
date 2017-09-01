@@ -11,7 +11,7 @@
       <h3>Message from the President</h3>
     </div>
       <p>
-        {{ page_content.presidents_word }}
+        {{ page_content.presidents_word|safe }}
       <p>
     </dir>
   </div>
@@ -21,7 +21,7 @@
       <h3>About</h3>
     </div>
       <p>
-        {{ page_content.about}}
+        {{ page_content.about|safe }}
       </p>
     </dir>
   </div>
@@ -31,7 +31,7 @@
         <h3>Facilities</h3>
       </div>
       <p>
-        {{ page_content.facilities}}
+        {{ page_content.facilities|safe }}
       </p>
     </dir>
     <dir class="col-sm-6">
@@ -39,7 +39,7 @@
         <h3>General</h3>
       </div>
       <p>
-        {{ page_content.general }}
+        {{ page_content.general|safe }}
       </p>
     </dir>
   </div>

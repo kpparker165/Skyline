@@ -10,7 +10,8 @@
 
   <!-- Latest compiled JavaScript -->
   <script src="{{ STATIC_URL}}/bootstrap/js/bootstrap.min.js"></script>
-
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <link href='{{ STATIC_URL}}fullcalendar-3.4.0/fullcalendar.min.css' rel='stylesheet'/>
   <link href='{{ STATIC_URL}}fullcalendar-3.4.0/fullcalendar.print.min.css' rel='stylesheet' media='print' />
   <script src='{{ STATIC_URL}}fullcalendar-3.4.0/lib/moment.min.js'></script>
@@ -18,12 +19,11 @@
   <script src='{{ STATIC_URL}}fullcalendar-3.4.0/fullcalendar.min.js'></script>
   <script src='{{ STATIC_URL}}custom/calendar.js'></script>
 
+
   {% block head %}
 
 
   {% endblock %}
-
-
 
 </head>
 <body>
@@ -38,11 +38,11 @@
 
       {% block nav-range %}
       <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hunting <span class="caret"></span></a>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ranges <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="/hunting/home/">Hunting Home</a></li>
-          <li><a href="/hunting/range/">Shooting Range</a></li>
-          <li><a href="/hunting/archery/">Archery Range</a></li>
+          <li><a href="/ranges/home/">Ranges Home</a></li>
+          <li><a href="/ranges/range/">Shooting Range</a></li>
+          <li><a href="/ranges/archery/">Archery Range</a></li>
           <li><a href="#">Awards</a></li>
         </ul>
       </li>
@@ -80,7 +80,7 @@
         </strong>
       </li>
       {% endblock %}
-      
+
       {% endblock %}
 
     </ul>

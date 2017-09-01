@@ -1,4 +1,4 @@
-from home.models import Home
+from home.models import HomePageDetail
 from django.contrib import admin
 
 
@@ -13,12 +13,12 @@ class HomeAdmin(admin.ModelAdmin):
     ("Home Page Information",  {'fields': ['about','facilities','general',
     	'presidents_word', ]}),
   ]
-  list_display = ( 'about','facilities','general',
+  list_display = ( 'id','about','facilities','general',
       'presidents_word',)
   date_hierarchy = 'creation_date'
   readonly_fields = ("creation_date",)
 
-admin.site.register(Home, HomeAdmin)
+admin.site.register(HomePageDetail, HomeAdmin)
 
 # boat_name = models.CharField(max_length=40)
 #   boat_desc = models.CharField(max_length=3000)

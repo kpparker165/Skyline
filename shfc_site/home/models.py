@@ -1,7 +1,7 @@
 from django.db import models
 import datetime
 
-class Home(models.Model):
+class HomePageDetail(models.Model):
 
   about = models.TextField()
   facilities = models.TextField()
